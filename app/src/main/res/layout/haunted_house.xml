@@ -9,12 +9,14 @@
 
     <ImageView
         android:id="@+id/iv_map"
-        android:layout_width="343dp"
-        android:layout_height="346dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_map_base"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
         app:srcCompat="@drawable/haunted_house" />
 
     <ImageView
@@ -32,44 +34,56 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Room Name"
-        android:textSize="36dp"
+        android:textSize="36sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/room_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="314dp"
+        android:layout_height="48dp"
         android:text="Room Description"
-        android:textSize="24dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_room_image" />
 
 
+    <ImageView
+        android:id="@+id/iv_room_image"
+        android:layout_width="312dp"
+        android:layout_height="289dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/room_name"
+        app:srcCompat="@drawable/houseexplore" />
+
     <Button
         android:id="@+id/entry_hallway"
-        android:layout_width="88dp"
-        android:layout_height="62dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#80D32626"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/vert_guideline4"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline2"
         app:layout_constraintTop_toTopOf="@+id/hor_guideline6" />
 
     <Button
         android:id="@+id/garage"
-        android:layout_width="88dp"
-        android:layout_height="63dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#80D32626"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/vert_guideline5"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline4"
         app:layout_constraintTop_toTopOf="@+id/hor_guideline6" />
 
     <Button
         android:id="@+id/living_room"
-        android:layout_width="86dp"
-        android:layout_height="99dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#80D32626"
         app:layout_constraintBottom_toTopOf="@+id/hor_guideline6"
         app:layout_constraintEnd_toStartOf="@+id/vert_guideline5"
@@ -78,18 +92,19 @@
 
     <Button
         android:id="@+id/fourier"
-        android:layout_width="89dp"
-        android:layout_height="95dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#80D32626"
         app:layout_constraintBottom_toTopOf="@+id/hor_guideline6"
         app:layout_constraintEnd_toStartOf="@+id/vert_guideline4"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline2"
-        app:layout_constraintTop_toTopOf="@+id/hor_guideline4" />
+        app:layout_constraintTop_toTopOf="@+id/hor_guideline4"
+        app:layout_constraintVertical_bias="0.25" />
 
     <Button
         android:id="@+id/hallway"
-        android:layout_width="50dp"
-        android:layout_height="94dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#80D32626"
         app:layout_constraintBottom_toTopOf="@+id/hor_guideline4"
         app:layout_constraintEnd_toEndOf="@+id/master_bedroom"
@@ -98,8 +113,8 @@
 
     <Button
         android:id="@+id/kitchen"
-        android:layout_width="94dp"
-        android:layout_height="97dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#80D32626"
         app:layout_constraintBottom_toTopOf="@+id/hor_guideline6"
         app:layout_constraintEnd_toStartOf="@+id/vert_guideline2"
@@ -108,8 +123,8 @@
 
     <Button
         android:id="@+id/nursery"
-        android:layout_width="81dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#80D32626"
         app:layout_constraintBottom_toTopOf="@+id/hor_guideline3"
         app:layout_constraintEnd_toStartOf="@+id/vert_guideline2"
@@ -118,19 +133,18 @@
 
     <Button
         android:id="@+id/master_bedroom"
-        android:layout_width="136dp"
-        android:layout_height="62dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#80D32626"
         app:layout_constraintBottom_toTopOf="@+id/hor_guideline2"
-        app:layout_constraintDimensionRatio="H,1:1"
         app:layout_constraintEnd_toStartOf="@+id/vert_guideline3"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline1"
         app:layout_constraintTop_toTopOf="@+id/hor_guideline1" />
 
     <Button
         android:id="@+id/backyard"
-        android:layout_width="134dp"
-        android:layout_height="152dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#809AB61D"
         app:layout_constraintBottom_toTopOf="@+id/hor_guideline4"
         app:layout_constraintEnd_toStartOf="@+id/vert_guideline5"
@@ -139,18 +153,18 @@
 
     <Button
         android:id="@+id/bunkroom"
-        android:layout_width="89dp"
-        android:layout_height="52dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#80D32626"
         app:layout_constraintBottom_toTopOf="@+id/hor_guideline4"
-        app:layout_constraintEnd_toEndOf="@+id/nursery"
+        app:layout_constraintEnd_toStartOf="@+id/vert_guideline2"
         app:layout_constraintStart_toStartOf="@+id/vert_guideline1"
         app:layout_constraintTop_toTopOf="@+id/hor_guideline3" />
 
     <Button
         android:id="@+id/pantry"
-        android:layout_width="26dp"
-        android:layout_height="54dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="#80D32626"
         app:layout_constraintBottom_toTopOf="@+id/hor_guideline5"
         app:layout_constraintEnd_toStartOf="@+id/vert_guideline1"
@@ -162,78 +176,77 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="328dp" />
+        app:layout_constraintGuide_percent="0.51976573" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vert_guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="241dp" />
+        app:layout_constraintGuide_percent="0.65" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vert_guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="190dp" />
+        app:layout_constraintGuide_percent="0.715" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vert_guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="141dp" />
+        app:layout_constraintGuide_percent="0.78" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vert_guideline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="61dp" />
+        app:layout_constraintGuide_percent="0.91068816" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/hor_guideline1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="42dp" />
+        app:layout_constraintGuide_percent="0.10852713" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/hor_guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="102dp" />
+        app:layout_constraintGuide_percent="0.26098192" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/hor_guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="148dp" />
+        app:layout_constraintGuide_percent="0.38242894" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/hor_guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="193dp" />
+        app:layout_constraintGuide_percent="0.498708" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/hor_guideline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="243dp" />
-
+        app:layout_constraintGuide_percent="0.625323" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/hor_guideline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="285dp" />
+        app:layout_constraintGuide_percent="0.7364341" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/hor_guideline7"
@@ -254,22 +267,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="361dp" />
+        app:layout_constraintGuide_percent="0.47291362" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="16dp" />
+        app:layout_constraintGuide_percent="0.97657394" />
 
-    <ImageView
-        android:id="@+id/iv_room_image"
-        android:layout_width="312dp"
-        android:layout_height="289dp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/room_name"
-        app:srcCompat="@drawable/houseexplore" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.051679585" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_map_base"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9457364" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
