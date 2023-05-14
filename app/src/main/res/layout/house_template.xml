@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/haunted_house_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/basic_functions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="iv_map,character,room_name,room_description,iv_room_image,gl_room_top,gl_room_bottom,gl_room_left,gl_room_right,gl_map_left,gl_map_right,gl_map_top,gl_map_bottom" />
+
+
+    <ImageView
+        android:id="@+id/iv_map"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/gl_map_bottom"
+        app:layout_constraintEnd_toStartOf="@+id/gl_map_right"
+        app:layout_constraintStart_toStartOf="@+id/gl_map_left"
+        app:layout_constraintTop_toTopOf="@+id/gl_map_top"
+        app:srcCompat="@drawable/haunted_house" />
+
+    <ImageView
+        android:id="@+id/character"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/person_foreground" />
+
+    <TextView
+        android:id="@+id/room_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Room Name"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toStartOf="@+id/gl_room_right"
+        app:layout_constraintStart_toStartOf="@+id/gl_room_left"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/gl_room_top"/>
+
+    <TextView
+        android:id="@+id/room_description"
+        android:layout_width="314dp"
+        android:layout_height="48dp"
+        android:text="Room Description"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/gl_room_right"
+        app:layout_constraintStart_toStartOf="@+id/gl_room_left"
+        app:layout_constraintTop_toBottomOf="@+id/iv_room_image" />
+
+    <ImageView
+        android:id="@+id/iv_room_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toStartOf="@+id/gl_room_right"
+        app:layout_constraintStart_toStartOf="@+id/gl_room_left"
+        app:layout_constraintTop_toTopOf="@+id/gl_room_top"
+        app:layout_constraintBottom_toTopOf="@id/gl_room_bottom"
+        app:srcCompat="@drawable/houseexplore" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_room_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12661499" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_room_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.87" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_room_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05773672" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_room_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.42" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_map_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.47291362" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_map_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97657394" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_map_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.051679585" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_map_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9457364" />
+
+    <ImageView
+        android:id="@+id/homeowner"
+        android:layout_width="39dp"
+        android:layout_height="47dp"
+        app:srcCompat="@drawable/homeowner1"
+         />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

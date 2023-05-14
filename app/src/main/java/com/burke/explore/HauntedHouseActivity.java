@@ -5,6 +5,8 @@ public class HauntedHouseActivity extends ExploreActivity {
     @Override
     public void initialize(){
         setContentView(R.layout.haunted_house);
+        houseLayout = findViewById(R.id.haunted_house_layout);
+
         //initialize house and adjacent rooms
         Room[] rooms = new Room[11];
         //room                room name       array of connected rooms          button                            image                           description
@@ -21,6 +23,7 @@ public class HauntedHouseActivity extends ExploreActivity {
         rooms[10] = new Room("Backyard",        new int[] {1,5,6,9},     findViewById(R.id.backyard),       R.drawable.rb_backyard,     "No dog! Shoot, most houses I explore have a dog. Now I feel lonely.");
         house = new House("Haunted House", rooms);
         currentRoom = house.getRooms()[0];
+        homeownerRoom = house.getRooms()[0];
 
         //initialize text
         tvRoomName = findViewById(R.id.room_name);
@@ -30,6 +33,7 @@ public class HauntedHouseActivity extends ExploreActivity {
         ivRoomImage = findViewById(R.id.iv_room_image);
         ivRoomImage.setImageResource(rooms[0].getImageID());
         character = findViewById(R.id.character);
+        homeowner = findViewById(R.id.homeowner);
 
     }
 
