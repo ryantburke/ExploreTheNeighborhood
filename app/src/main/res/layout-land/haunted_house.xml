@@ -7,58 +7,12 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/iv_map"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="fitXY"
-        android:adjustViewBounds="true"
-        app:layout_constraintBottom_toTopOf="@+id/gl_map_bottom"
-        app:layout_constraintEnd_toStartOf="@+id/gl_map_right"
-        app:layout_constraintStart_toStartOf="@+id/gl_map_left"
-        app:layout_constraintTop_toTopOf="@+id/gl_map_top"
-        app:srcCompat="@drawable/haunted_house" />
-
-    <ImageView
-        android:id="@+id/character"
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/basic_functions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/entry_hallway"
-        app:layout_constraintEnd_toEndOf="@+id/entry_hallway"
-        app:layout_constraintStart_toStartOf="@+id/entry_hallway"
-        app:layout_constraintTop_toTopOf="@+id/hor_guideline6"
-        app:srcCompat="@drawable/person_foreground" />
+        app:constraint_referenced_ids="iv_map,character,room_name,room_description,iv_room_image,gl_room_top,gl_room_bottom,gl_room_left,gl_room_right,gl_map_left,gl_map_right,gl_map_top,gl_map_bottom" />
 
-    <TextView
-        android:id="@+id/room_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Room Name"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toStartOf="@+id/gl_map_left"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/room_description"
-        android:layout_width="314dp"
-        android:layout_height="48dp"
-        android:text="Room Description"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/gl_map_left"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_room_image" />
-
-
-    <ImageView
-        android:id="@+id/iv_room_image"
-        android:layout_width="312dp"
-        android:layout_height="289dp"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toStartOf="@+id/gl_map_left"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/room_name"
-        app:srcCompat="@drawable/houseexplore" />
 
     <Button
         android:id="@+id/entry_hallway"
@@ -263,6 +217,104 @@
         app:layout_constraintGuide_begin="-1dp" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+
+
+    <ImageView
+        android:id="@+id/iv_map"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/gl_map_bottom"
+        app:layout_constraintEnd_toStartOf="@+id/gl_map_right"
+        app:layout_constraintStart_toStartOf="@+id/gl_map_left"
+        app:layout_constraintTop_toTopOf="@+id/gl_map_top"
+        app:srcCompat="@drawable/haunted_house" />
+
+    <ImageView
+        android:id="@+id/character"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/entry_hallway"
+        app:layout_constraintEnd_toEndOf="@+id/entry_hallway"
+        app:layout_constraintStart_toStartOf="@+id/entry_hallway"
+        app:layout_constraintTop_toTopOf="@+id/hor_guideline6"
+        app:srcCompat="@drawable/person_foreground" />
+
+    <TextView
+        android:id="@+id/room_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Room Name"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toStartOf="@+id/gl_room_right"
+        app:layout_constraintStart_toStartOf="@+id/gl_room_left"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/gl_room_top"/>
+
+    <TextView
+        android:id="@+id/room_description"
+        android:layout_width="314dp"
+        android:layout_height="48dp"
+        android:text="Room Description"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/gl_room_right"
+        app:layout_constraintStart_toStartOf="@+id/gl_room_left"
+        app:layout_constraintTop_toBottomOf="@+id/iv_room_image" />
+
+    <ImageView
+        android:id="@+id/iv_room_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toStartOf="@+id/gl_room_right"
+        app:layout_constraintStart_toStartOf="@+id/gl_room_left"
+        app:layout_constraintTop_toTopOf="@+id/gl_room_top"
+        app:layout_constraintBottom_toTopOf="@id/gl_room_bottom"
+        app:srcCompat="@drawable/houseexplore" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="342dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_room_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12661499" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_room_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.87" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_room_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05773672" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_room_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.42" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_map_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -290,19 +342,14 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.9457364" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
-
     <ImageView
         android:id="@+id/homeowner"
         android:layout_width="39dp"
         android:layout_height="47dp"
         app:srcCompat="@drawable/homeowner1"
-        tools:layout_editor_absoluteX="643dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/entry_hallway"
+        app:layout_constraintEnd_toEndOf="@+id/entry_hallway"
+        app:layout_constraintStart_toStartOf="@+id/entry_hallway"
+        app:layout_constraintTop_toTopOf="@+id/hor_guideline6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

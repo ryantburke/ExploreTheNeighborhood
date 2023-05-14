@@ -5,6 +5,8 @@ public class HauntedHouseActivity extends ExploreActivity {
     @Override
     public void initializeHome(){
         setContentView(R.layout.haunted_house);
+        houseLayout = findViewById(R.id.haunted_house_layout);
+
         //initialize house and adjacent rooms
         Room[] rooms = new Room[11];
         //room                room name       array of connected rooms          button                            image                           description
