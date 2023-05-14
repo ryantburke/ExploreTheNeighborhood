@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         enter = findViewById(R.id.enter_button);
 
-        Intent intentExplore = new Intent(this,HauntedHouseActivity.class);
+        Intent intentExplore = new Intent(this,HouseActivityMrBurke.class);
 
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
