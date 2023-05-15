@@ -40,13 +40,13 @@ public class ExploreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        initialize();
+        initializeHouse();
         movePlayer();
         delayedHomeonwerReturn();
 
     }
 
-    public void initialize(){
+    public void initializeHouse(){
 
     }
 

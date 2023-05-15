@@ -3,7 +3,7 @@ package com.burke.explore;
 public class HauntedHouseActivity extends ExploreActivity {
 
     @Override
-    public void initializeHome(){
+    public void initializeHouse(){
         setContentView(R.layout.haunted_house);
         houseLayout = findViewById(R.id.haunted_house_layout);
 
