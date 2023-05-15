@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 public class ExploreActivity extends AppCompatActivity {
 
+    protected Player player;
     protected ConstraintLayout houseLayout;
     protected TextView tvRoomName;
     protected TextView tvDescription;
@@ -40,18 +41,23 @@ public class ExploreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        initialize();
         initializeHouse();
         movePlayer();
         delayedHomeonwerReturn();
 
     }
 
-    public void initializeHouse(){
+    protected void initialize(){
+
+    }
+
+    protected void initializeHouse(){
 
     }
 
 
-    private void movePlayer(){
+    protected void movePlayer(){
         tvRoomName.setText(currentRoom.getName());
         tvDescription.setText(currentRoom.getDescription());
         ivRoomImage.setImageResource(currentRoom.getImageID());
@@ -84,7 +90,7 @@ public class ExploreActivity extends AppCompatActivity {
         }
     }
 
-    private void delayedHomeonwerReturn(){
+    protected void delayedHomeonwerReturn(){
 
         homeowner.setVisibility(View.INVISIBLE);
 
@@ -118,7 +124,7 @@ public class ExploreActivity extends AppCompatActivity {
     }
 
 
-    private void moveHomeowner(){
+    protected void moveHomeowner(){
 
         ConstraintLayout layout = houseLayout;
         ConstraintSet constraintSet = new ConstraintSet();
