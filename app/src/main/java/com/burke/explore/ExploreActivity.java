@@ -1,13 +1,12 @@
 package com.burke.explore;
 
-import androidx.annotation.ContentView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Layout;
 import android.transition.TransitionManager;
 import android.view.View;
 import android.widget.ImageView;
@@ -29,10 +28,12 @@ public class ExploreActivity extends AppCompatActivity {
     protected Room homeownerRoom;
 
     protected ImageView homeowner;
-    protected int homeownerReturnTimeMs = 5000;
+    protected int homeownerReturnTimeMs = 10000;
     protected int homeownerMoveTimeMs = 2000;
 
     protected Handler handler = new Handler();
+    protected MediaPlayer mp_soundtrack;
+    protected MediaPlayer mp_arrivehome;
 
 
 
@@ -49,6 +50,12 @@ public class ExploreActivity extends AppCompatActivity {
     }
 
     protected void initialize(){
+
+        mp_soundtrack = MediaPlayer.create(this,R.raw.title_track2);
+        mp_soundtrack.start();
+        mp_soundtrack.setLooping(true);
+
+        mp_arrivehome = MediaPlayer.create(this, R.raw.arrive_home);
 
     }
 
@@ -99,6 +106,7 @@ public class ExploreActivity extends AppCompatActivity {
             tvRoomName.setText("OH NO!");
             tvDescription.setText("SOMEONE IS HOME! WHAT TO DO!");
             ivRoomImage.setImageResource(R.drawable.homeowner_arrives);
+            mp_arrivehome.start();
 
             homeowner.setVisibility(View.VISIBLE);
 
