@@ -34,6 +34,7 @@ public class ExploreActivity extends AppCompatActivity {
     protected Handler handler = new Handler();
     protected MediaPlayer mp_soundtrack;
     protected MediaPlayer mp_arrivehome;
+    protected MediaPlayer mp_caught;
 
 
 
@@ -56,6 +57,7 @@ public class ExploreActivity extends AppCompatActivity {
         mp_soundtrack.setLooping(true);
 
         mp_arrivehome = MediaPlayer.create(this, R.raw.arrive_home);
+        mp_caught = MediaPlayer.create(this, R.raw.caught);
 
     }
 
@@ -146,6 +148,10 @@ public class ExploreActivity extends AppCompatActivity {
         TransitionManager.beginDelayedTransition(layout);
         constraintSet.applyTo(layout);
         homeowner.invalidate();
+
+        if (currentRoom.equals(homeownerRoom)) {
+            mp_caught.start();
+        }
 
         Room[] adjacentRooms = homeownerRoom.getAdjacentRooms(house);
         int randRoom = (int) (Math.random() * adjacentRooms.length);
