@@ -1,5 +1,9 @@
 package com.burke.explore;
 
+import android.content.Intent;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 public class HauntedHouseActivity extends ExploreActivity {
 
     @Override
@@ -34,8 +38,15 @@ public class HauntedHouseActivity extends ExploreActivity {
         ivRoomImage.setImageResource(rooms[0].getImageID());
 
         //initialize characters
-        character = findViewById(R.id.character);
         homeowner = findViewById(R.id.homeowner);
+
+        Intent intent = getIntent();
+        player = (Player) intent.getSerializableExtra("player");
+        character = findViewById(R.id.character);
+        character.setImageResource(player.getImageID());
+        ConstraintLayout.LayoutParams layoutParams = new ConstraintLayout.LayoutParams(100,100);
+        character.setLayoutParams(layoutParams);
+
 
     }
 

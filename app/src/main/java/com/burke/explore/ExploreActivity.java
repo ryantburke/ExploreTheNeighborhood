@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.transition.TransitionManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -59,6 +61,7 @@ public class ExploreActivity extends AppCompatActivity {
         mp_arrivehome = MediaPlayer.create(this, R.raw.arrive_home);
         mp_caught = MediaPlayer.create(this, R.raw.caught);
 
+
     }
 
     protected void initializeHouse(){
@@ -83,6 +86,9 @@ public class ExploreActivity extends AppCompatActivity {
 
         TransitionManager.beginDelayedTransition(layout);
         constraintSet.applyTo(layout);
+
+
+
         character.invalidate();
 
         Room[] adjacentRooms = currentRoom.getAdjacentRooms(house);
@@ -158,8 +164,12 @@ public class ExploreActivity extends AppCompatActivity {
         homeownerRoom = adjacentRooms[randRoom];
 
         handler.postDelayed(() -> moveHomeowner(), homeownerMoveTimeMs); //delay homeowner movement
-
-
-
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mp_soundtrack.stop();
+    }
+
 }

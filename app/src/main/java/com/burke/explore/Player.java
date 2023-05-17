@@ -7,14 +7,14 @@ import java.io.Serializable;
 public class Player implements Serializable {
 
     private String name;
-    private ImageView image;
+    private int imageID;
     private int numHousesExplored;
 
     private int numTimesCaught;
 
-    public Player(String name, ImageView image) {
+    public Player(String name, int imageID) {
         this.name = name;
-        this.image = image;
+        this.imageID = imageID;
         this.numHousesExplored = 0;
         this.numTimesCaught = 0;
     }
@@ -27,12 +27,12 @@ public class Player implements Serializable {
         this.name = name;
     }
 
-    public ImageView getImage() {
-        return image;
+    public int getImageID() {
+        return imageID;
     }
 
-    public void setImage(ImageView image) {
-        this.image = image;
+    public void setImageID(int imageID) {
+        this.imageID = imageID;
     }
 
     public int getNumHousesExplored() {
