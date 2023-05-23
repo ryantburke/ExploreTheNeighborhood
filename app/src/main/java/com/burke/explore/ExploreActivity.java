@@ -21,10 +21,8 @@ public class ExploreActivity extends AppCompatActivity {
     protected TextView tvRoomName;
     protected TextView tvDescription;
     protected ImageView ivMap;
-
     protected ImageView ivRoomImage;
     protected ImageView character;
-
     protected House house;
     protected Room currentRoom;
     protected Room homeownerRoom;
